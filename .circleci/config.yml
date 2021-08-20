@@ -9,7 +9,10 @@ jobs:
       - checkout
       - run:
           name: Pip requirements 
-          command: pip install -r requirements.txt
+          command: |
+            sudo pip install --upgrade pip
+            sudo pip install sphinx sphinx_intl sphinx_rtd_theme
+            sudo pip install -r requirements.txt
       - run:
           name: Build Html
           command: make html
