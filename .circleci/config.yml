@@ -7,11 +7,22 @@ jobs:
     working_directory: ~/cloak-docs
     steps: 
       - checkout
+      - restore_cache:
+         keys:
+          # when lock file changes, use increasingly general patterns to restore cache
+          - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          - pip-packages-v1-{{ .Branch }}-
+          - pip-packages-v1-
+      - save_cache:
+          paths:
+            - ~/.local/share/virtualenvs/venv  # this path depends on where pipenv creates a virtualenv
+          key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           name: Pip requirements 
           command: |
+            sudo pip install --upgrade pip
             sudo pip install sphinx sphinx_intl sphinx_rtd_theme
-            pip install -r requirements.txt
+            sudo pip install -r requirements.txt
       - run:
           name: Build Html
           command: make html
