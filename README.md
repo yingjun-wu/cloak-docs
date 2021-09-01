@@ -20,6 +20,9 @@ A consortium of members sending governance transactions in charge of governing t
 The effects of user and member transactions are eventually committed to a replicated encrypted ledger.
 
 ![Cloak Network](./docs/source/imgs/cloak-network.svg)
+<a>
+    <img src="./docs/source/imgs/cloak-network.svg" alt="Cloak Network" />
+</a>
 
 ## Table of contents
 
