@@ -23,7 +23,7 @@ The effects of user and member transactions are eventually committed to a replic
 <a>
     <img src="./docs/source/imgs/cloak-network.svg" alt="Cloak Network" />
 </a>
-
+<img src="./docs/source/imgs/cloak-network.svg" alt="cloak-network">
 ## Table of contents
 
 - Getting Started
